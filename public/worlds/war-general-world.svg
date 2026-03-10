@@ -1,0 +1,20 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#0D0F13"/>
+  <rect width="1200" height="800" fill="url(#war)"/>
+  <circle cx="273" cy="171" r="119" fill="#FFD0A1" fill-opacity="0.36"/>
+  <path d="M0 463C145 408 309 403 464 458C619 513 733 512 880 463C1028 414 1110 427 1200 466V800H0V463Z" fill="#3A2E2D"/>
+  <path d="M0 567C179 527 336 566 480 619C624 672 782 703 946 661C1110 619 1171 618 1200 625V800H0V567Z" fill="#221818"/>
+  <path d="M389 367L533 407L507 509L366 466L389 367Z" fill="#14181C"/>
+  <path d="M537 404L704 287L768 382L600 499L537 404Z" fill="#1B2329"/>
+  <path d="M384 482L640 282" stroke="#E6C89F" stroke-width="7" stroke-linecap="round" stroke-dasharray="11 14" opacity="0.7"/>
+  <path d="M713 247L759 206L794 260L744 295L713 247Z" fill="#B48B6F"/>
+  <path d="M860 223C912 278 935 348 925 424" stroke="#D8C0AE" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 16" opacity="0.55"/>
+  <path d="M872 490C916 449 970 445 1004 474" stroke="#E6C89F" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+  <defs>
+    <linearGradient id="war" x1="600" y1="0" x2="600" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#423535"/>
+      <stop offset="0.48" stop-color="#221B1C"/>
+      <stop offset="1" stop-color="#09090B"/>
+    </linearGradient>
+  </defs>
+</svg>

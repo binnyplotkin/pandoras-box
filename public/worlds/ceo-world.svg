@@ -1,0 +1,26 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#06131E"/>
+  <rect width="1200" height="800" fill="url(#city)"/>
+  <circle cx="940" cy="150" r="110" fill="#AEE9FF" fill-opacity="0.45"/>
+  <path d="M125 800V405L275 322V800H125Z" fill="#0A2232"/>
+  <path d="M290 800V230L446 128V800H290Z" fill="#0C2B40"/>
+  <path d="M467 800V305L620 208V800H467Z" fill="#123A54"/>
+  <path d="M646 800V170L808 90V800H646Z" fill="#174765"/>
+  <path d="M834 800V270L1022 164V800H834Z" fill="#0E2D43"/>
+  <path d="M1036 800V362L1147 304V800H1036Z" fill="#133F5A"/>
+  <path d="M0 667C195 610 377 633 556 681C735 729 983 760 1200 716V800H0V667Z" fill="#04090D"/>
+  <path d="M159 516H241" stroke="#93E1FF" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+  <path d="M159 558H241" stroke="#93E1FF" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+  <path d="M331 332H407" stroke="#93E1FF" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+  <path d="M331 376H407" stroke="#93E1FF" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+  <path d="M691 254H770" stroke="#93E1FF" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+  <path d="M691 301H770" stroke="#93E1FF" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+  <polyline points="82,569 211,511 334,546 458,432 589,455 720,311 846,365 1001,212" stroke="#D7F7FF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="city" x1="600" y1="0" x2="600" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#173A5A"/>
+      <stop offset="0.52" stop-color="#0A2235"/>
+      <stop offset="1" stop-color="#03080C"/>
+    </linearGradient>
+  </defs>
+</svg>

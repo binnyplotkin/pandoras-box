@@ -1,0 +1,20 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#05131D"/>
+  <rect width="1200" height="800" fill="url(#storm)"/>
+  <circle cx="909" cy="140" r="92" fill="#D7F2FF" fill-opacity="0.58"/>
+  <path d="M0 424C124 377 235 386 359 440C482 494 645 505 772 456C899 407 1066 395 1200 447V800H0V424Z" fill="#0A3242"/>
+  <path d="M0 520C151 473 288 487 420 532C553 576 673 587 820 549C967 511 1061 510 1200 557V800H0V520Z" fill="#0B2531"/>
+  <path d="M495 577L657 577L634 800H521L495 577Z" fill="#151A1D"/>
+  <path d="M585 256L592 577" stroke="#171B1F" stroke-width="13" stroke-linecap="round"/>
+  <path d="M593 288L802 386L593 442V288Z" fill="#171C20"/>
+  <path d="M581 319L409 425L581 470V319Z" fill="#212A31"/>
+  <path d="M760 486C795 462 850 468 877 496" stroke="#D7F2FF" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+  <path d="M196 250L243 310L321 300L273 360L295 438L226 392L161 438L180 360L131 300L209 310L196 250Z" fill="#BFE5F7" fill-opacity="0.7"/>
+  <defs>
+    <linearGradient id="storm" x1="600" y1="0" x2="600" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#173C4E"/>
+      <stop offset="0.44" stop-color="#0D2633"/>
+      <stop offset="1" stop-color="#04090D"/>
+    </linearGradient>
+  </defs>
+</svg>
