@@ -33,10 +33,7 @@ body {
   min-height: 100vh;
   margin: 0;
   color: var(--foreground);
-  background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.8), transparent 34%),
-    radial-gradient(circle at bottom left, rgba(101, 184, 190, 0.35), transparent 30%),
-    linear-gradient(180deg, #edf6f7 0%, #b8d3d8 48%, #729ca8 100%);
+  background: #eadfc9;
   font-family: var(--font-display), serif;
 }
 
