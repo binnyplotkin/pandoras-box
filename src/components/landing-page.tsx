@@ -479,11 +479,11 @@ export function LandingPage({ worlds }: { worlds: VisibleWorld[] }) {
                           }`}
                         />
                       </span>
-                      <span className="absolute -bottom-9 z-10 rounded-full bg-white/86 px-2 py-1 text-center font-mono text-[10px] uppercase tracking-[0.24em] text-[#1d2830] md:text-xs">
+                      <span className="absolute -bottom-12 z-10 rounded-full bg-white/86 px-2 py-1 text-center font-mono text-[10px] uppercase tracking-[0.24em] text-[#1d2830] md:-bottom-14 md:text-xs">
                         {world.title.replace(" World", "")}
                       </span>
                       {!world.available ? (
-                        <span className="absolute -bottom-16 rounded-full border border-white/40 bg-white/72 px-2 py-1 font-mono text-[8px] uppercase tracking-[0.24em] text-[#465059] md:text-[9px]">
+                        <span className="absolute -bottom-20 rounded-full border border-white/40 bg-white/72 px-2 py-1 font-mono text-[8px] uppercase tracking-[0.24em] text-[#465059] md:-bottom-24 md:text-[9px]">
                           Incoming
                         </span>
                       ) : null}
