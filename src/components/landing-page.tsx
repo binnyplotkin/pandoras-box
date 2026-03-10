@@ -438,20 +438,45 @@ export function LandingPage({ worlds }: { worlds: VisibleWorld[] }) {
                         filter: `blur(${pose.blur})`,
                         zIndex: pose.zIndex,
                         boxShadow: isActive
-                          ? "0 14px 40px rgba(36, 48, 52, 0.35)"
-                          : "0 8px 24px rgba(38, 49, 54, 0.22)",
+                          ? "0 30px 56px rgba(16, 24, 30, 0.44)"
+                          : "0 16px 30px rgba(20, 28, 34, 0.26)",
                         transition: isDragging
                           ? "opacity 220ms ease, filter 220ms ease, box-shadow 220ms ease"
                           : "left 520ms ease, top 520ms ease, transform 520ms ease, opacity 420ms ease, filter 420ms ease, box-shadow 420ms ease",
                       }}
                     >
+                      <span
+                        className={`pointer-events-none absolute -bottom-3 h-8 rounded-full bg-[#1a252c]/65 blur-xl ${
+                          isActive ? "w-28 md:w-36" : "w-20 md:w-26"
+                        }`}
+                      />
                       <span className="absolute inset-0 overflow-hidden rounded-full">
+                        {isActive ? (
+                          <span className="pointer-events-none absolute -inset-3 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.55)_0%,rgba(255,255,255,0.22)_40%,rgba(234,223,201,0)_72%)] blur-xl" />
+                        ) : null}
                         <Image
                           src={world.image}
                           alt={world.title}
                           fill
                           sizes="160px"
                           className="object-cover"
+                          style={{
+                            WebkitMaskImage: isActive
+                              ? "radial-gradient(circle, rgba(0,0,0,1) 42%, rgba(0,0,0,0.97) 58%, rgba(0,0,0,0.72) 78%, rgba(0,0,0,0.18) 92%, rgba(0,0,0,0) 100%)"
+                              : "radial-gradient(circle, rgba(0,0,0,1) 52%, rgba(0,0,0,0.88) 74%, rgba(0,0,0,0.15) 96%, rgba(0,0,0,0) 100%)",
+                            maskImage: isActive
+                              ? "radial-gradient(circle, rgba(0,0,0,1) 42%, rgba(0,0,0,0.97) 58%, rgba(0,0,0,0.72) 78%, rgba(0,0,0,0.18) 92%, rgba(0,0,0,0) 100%)"
+                              : "radial-gradient(circle, rgba(0,0,0,1) 52%, rgba(0,0,0,0.88) 74%, rgba(0,0,0,0.15) 96%, rgba(0,0,0,0) 100%)",
+                          }}
+                        />
+                        <span className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_32%_24%,rgba(255,255,255,0.62)_0%,rgba(255,255,255,0.14)_28%,rgba(255,255,255,0)_52%)]" />
+                        <span className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_68%_80%,rgba(9,14,17,0)_38%,rgba(9,14,17,0.26)_74%,rgba(9,14,17,0.46)_100%)]" />
+                        <span
+                          className={`pointer-events-none absolute inset-0 rounded-full ${
+                            isActive
+                              ? "bg-[radial-gradient(circle,rgba(255,255,255,0)_40%,rgba(255,255,255,0.16)_62%,rgba(234,223,201,0.82)_100%)]"
+                              : "bg-[radial-gradient(circle,rgba(255,255,255,0)_50%,rgba(234,223,201,0.52)_100%)]"
+                          }`}
                         />
                       </span>
                       <span className="absolute -bottom-9 z-10 rounded-full bg-white/86 px-2 py-1 text-center font-mono text-[10px] uppercase tracking-[0.24em] text-[#1d2830] md:text-xs">
