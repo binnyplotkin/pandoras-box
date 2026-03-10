@@ -209,6 +209,24 @@ export function LandingPage({ worlds }: { worlds: VisibleWorld[] }) {
     };
   }, []);
 
+  useEffect(() => {
+    if (isDragging) {
+      return;
+    }
+
+    const rotateTimer = window.setInterval(() => {
+      if (document.visibilityState !== "visible") {
+        return;
+      }
+
+      setActiveIndex((current) => (current + 1) % showcaseWorlds.length);
+    }, 5000);
+
+    return () => {
+      window.clearInterval(rotateTimer);
+    };
+  }, [isDragging, showcaseWorlds.length]);
+
   function moveCarousel(direction: "next" | "previous") {
     setActiveIndex((current) =>
       direction === "next"
@@ -219,8 +237,7 @@ export function LandingPage({ worlds }: { worlds: VisibleWorld[] }) {
   }
 
   function getDragProgress(delta: number) {
-    const width = containerRef.current?.clientWidth ?? 1;
-    return Math.max(-1.2, Math.min(1.2, delta / width)) * 100;
+    return Math.max(-18, Math.min(18, delta / 14));
   }
 
   function handlePointerStart(clientX: number) {
@@ -248,7 +265,7 @@ export function LandingPage({ worlds }: { worlds: VisibleWorld[] }) {
 
     const resolved = clientX ?? dragLastRef.current ?? origin;
     const delta = resolved - origin;
-    const threshold = (containerRef.current?.clientWidth ?? 0) * 0.12;
+    const threshold = 36;
 
     if (delta <= -threshold) {
       moveCarousel("next");
@@ -349,15 +366,6 @@ export function LandingPage({ worlds }: { worlds: VisibleWorld[] }) {
             </div>
 
             <div className="mt-10 flex items-center justify-center gap-3 md:gap-5">
-              <button
-                type="button"
-                onClick={() => moveCarousel("previous")}
-                className="hidden h-12 w-12 items-center justify-center rounded-full border border-white/16 bg-white/8 text-white/72 backdrop-blur-xl transition hover:bg-white/16 md:inline-flex"
-                aria-label="Previous world"
-              >
-                ←
-              </button>
-
               <div
                 ref={containerRef}
                 className={`relative h-[18rem] w-full max-w-6xl touch-pan-y overflow-hidden md:h-[22rem] ${
@@ -431,15 +439,6 @@ export function LandingPage({ worlds }: { worlds: VisibleWorld[] }) {
 
                 <div className="pointer-events-none absolute inset-x-[18%] bottom-7 h-10 rounded-full bg-white/8 blur-3xl md:inset-x-[30%]" />
               </div>
-
-              <button
-                type="button"
-                onClick={() => moveCarousel("next")}
-                className="hidden h-12 w-12 items-center justify-center rounded-full border border-white/16 bg-white/8 text-white/72 backdrop-blur-xl transition hover:bg-white/16 md:inline-flex"
-                aria-label="Next world"
-              >
-                →
-              </button>
             </div>
 
             <div className="mx-auto mt-4 max-w-4xl rounded-[2rem] border border-white/12 bg-white/8 px-5 py-6 shadow-[0_22px_80px_rgba(0,0,0,0.18)] backdrop-blur-2xl md:mt-2 md:grid md:grid-cols-[0.88fr_1.12fr] md:items-center md:gap-8 md:px-8">
