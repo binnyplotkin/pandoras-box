@@ -1,0 +1,3 @@
+{
+  "/api/worlds/[worldId]/route": "app/api/worlds/[worldId]/route.js"
+}
