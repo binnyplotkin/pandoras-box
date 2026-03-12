@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createTextToSpeechAdapter } from "@pandora/engine";
+import { createTextToSpeechAdapter } from "@odyssey/engine";
 
 export async function POST(request: NextRequest) {
   try {

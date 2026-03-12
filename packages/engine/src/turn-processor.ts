@@ -5,14 +5,14 @@ import {
   PolicyGuard,
   StateReducer,
 } from "./interfaces";
-import { createId } from "@pandora/utils";
+import { createId } from "@odyssey/utils";
 import {
   SessionRecord,
   TurnInput,
   TurnRecord,
   turnResultSchema,
   WorldDefinition,
-} from "@pandora/types";
+} from "@odyssey/types";
 
 function buildVoiceDirectedAudio(params: {
   world: WorldDefinition;

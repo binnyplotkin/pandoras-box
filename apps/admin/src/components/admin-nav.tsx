@@ -35,7 +35,7 @@ export function AdminNav() {
           paddingLeft: "0.75rem",
         }}
       >
-        Pandora Admin
+        Odyssey Admin
       </div>
 
       {links.map((link) => {

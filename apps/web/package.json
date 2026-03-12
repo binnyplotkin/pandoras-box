@@ -1,5 +1,5 @@
 {
-  "name": "@pandora/web",
+  "name": "@odyssey/web",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@pandora/types": "*",
-    "@pandora/utils": "*",
-    "@pandora/db": "*",
-    "@pandora/engine": "*",
+    "@odyssey/types": "*",
+    "@odyssey/utils": "*",
+    "@odyssey/db": "*",
+    "@odyssey/engine": "*",
+    "@odyssey/ui": "*",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"

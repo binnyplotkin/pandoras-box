@@ -1,6 +1,6 @@
-# Pandora's Box
+# Odyssey
 
-Pandora's Box is a Vercel-ready Next.js application for voice-first AI simulations. Phase 1 ships a reusable engine that supports structured worlds, dynamic event generation, explicit state tracking, resumable sessions, and a minimal web client with chat fallback.
+Odyssey is a Vercel-ready Next.js application for voice-first AI simulations. Phase 1 ships a reusable engine that supports structured worlds, dynamic event generation, explicit state tracking, resumable sessions, and a minimal web client with chat fallback.
 
 ## Stack
 
@@ -41,7 +41,7 @@ src/types               Domain schemas and types
 Create `.env.local` with:
 
 ```bash
-DATABASE_URL=postgresql://user:password@your-neon-endpoint/pandoras_box?sslmode=require
+DATABASE_URL=postgresql://user:password@your-neon-endpoint/odyssey?sslmode=require
 OPENAI_API_KEY=sk-...
 ```
 
@@ -69,7 +69,7 @@ npm run db:generate
 npm run db:push
 ```
 
-The schema lives in [`src/lib/db/schema.ts`](/Users/joshsassoon/Documents/pandoras-box/src/lib/db/schema.ts).
+The schema lives in [`src/lib/db/schema.ts`](/Users/joshsassoon/Documents/odyssey/src/lib/db/schema.ts).
 
 ## Test and build
 

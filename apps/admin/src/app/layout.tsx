@@ -3,8 +3,8 @@ import { AdminNav } from "@/components/admin-nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Pandora's Box — Admin",
-  description: "Administration dashboard for Pandora's Box simulation engine.",
+  title: "Odyssey — Admin",
+  description: "Administration dashboard for Odyssey simulation engine.",
 };
 
 export default function AdminLayout({

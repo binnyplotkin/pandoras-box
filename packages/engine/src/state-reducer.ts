@@ -1,6 +1,6 @@
 import { StateReducer } from "./interfaces";
-import { clamp } from "@pandora/utils";
-import { SimulationState, TurnInput, WorldDefinition } from "@pandora/types";
+import { clamp } from "@odyssey/utils";
+import { SimulationState, TurnInput, WorldDefinition } from "@odyssey/types";
 
 function scoreText(input: string, positiveWords: string[], negativeWords: string[]) {
   const lowered = input.toLowerCase();

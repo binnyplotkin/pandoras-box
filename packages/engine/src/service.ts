@@ -1,4 +1,4 @@
-import { getPersistenceStore, getWorldRepository } from "@pandora/db";
+import { getPersistenceStore, getWorldRepository } from "@odyssey/db";
 import { RuleBasedEventSelector } from "./event-selector";
 import { RollingMemorySummarizer } from "./memory-summarizer";
 import { DefaultPolicyGuard } from "./policy-guard";
@@ -6,7 +6,7 @@ import { HeuristicStateReducer } from "./state-reducer";
 import { TurnProcessor, TurnTraceStep } from "./turn-processor";
 import { buildWorldDefinitionFromPrompt } from "./world-builder";
 import { StaticWorldLoader } from "./world-loader";
-import { createId, isoNow } from "@pandora/utils";
+import { createId, isoNow } from "@odyssey/utils";
 import {
   BuildWorldResponse,
   sessionRecordSchema,
@@ -18,7 +18,7 @@ import {
   worldBuildResponseSchema,
   worldDefinitionSchema,
   WorldDefinition,
-} from "@pandora/types";
+} from "@odyssey/types";
 
 export function createSimulationService(staticWorlds: WorldDefinition[] = []) {
   const worldLoader = new StaticWorldLoader(staticWorlds);

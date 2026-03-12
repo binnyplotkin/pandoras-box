@@ -1,5 +1,5 @@
 {
-  "name": "@pandora/engine",
+  "name": "@odyssey/engine",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -10,9 +10,9 @@
     }
   },
   "dependencies": {
-    "@pandora/types": "*",
-    "@pandora/utils": "*",
-    "@pandora/db": "*",
+    "@odyssey/types": "*",
+    "@odyssey/utils": "*",
+    "@odyssey/db": "*",
     "openai": "^6.27.0",
     "ws": "^8.19.0"
   }

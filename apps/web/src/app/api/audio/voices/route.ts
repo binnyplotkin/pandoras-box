@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { getElevenLabsPricingGuardInfo } from "@pandora/engine";
-import { getVoiceDiscoveryDebugInfo } from "@pandora/engine";
+import { getElevenLabsPricingGuardInfo } from "@odyssey/engine";
+import { getVoiceDiscoveryDebugInfo } from "@odyssey/engine";
 
 export const dynamic = "force-dynamic";
 

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { PointerEvent, WheelEvent, useMemo, useRef, useState, useTransition } from "react";
-import { VisibleWorld } from "@pandora/types";
+import { VisibleWorld } from "@odyssey/types";
 
 type EngineView = "architecture" | "trace";
 type NodeTone = "client" | "api" | "engine" | "ai" | "data";
@@ -522,7 +522,7 @@ export function EngineCanvas({ worlds }: { worlds: VisibleWorld[] }) {
       >
         <div className="flex flex-wrap items-center gap-3">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-slate-300">Engine</p>
-          <h1 className="text-lg font-semibold text-white">Pandora&apos;s Box</h1>
+          <h1 className="text-lg font-semibold text-white">Odyssey</h1>
           <div className="ml-auto flex gap-2">
             <Link
               href="/"

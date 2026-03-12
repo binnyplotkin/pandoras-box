@@ -1,10 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, IBM_Plex_Mono } from "next/font/google";
+import { Fraunces, IBM_Plex_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 const displayFont = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
+});
+
+const headingFont = Plus_Jakarta_Sans({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
 });
 
 const monoFont = IBM_Plex_Mono({
@@ -18,9 +24,9 @@ const siteDescription =
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-  title: "Pandora's Box",
+  title: "Odyssey",
   description: siteDescription,
-  applicationName: "Pandora's Box",
+  applicationName: "Odyssey",
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -34,7 +40,7 @@ export const metadata: Metadata = {
     other: [{ rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#5f4025" }],
   },
   openGraph: {
-    title: "Pandora's Box",
+    title: "Odyssey",
     description: siteDescription,
     type: "website",
     images: [
@@ -42,13 +48,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Pandora's Box icon",
+        alt: "Odyssey icon",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pandora's Box",
+    title: "Odyssey",
     description: siteDescription,
     images: ["/og-image.png"],
   },
@@ -69,7 +75,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${displayFont.variable} ${monoFont.variable}`}>
+      <body className={`${displayFont.variable} ${headingFont.variable} ${monoFont.variable}`}>
         {children}
       </body>
     </html>

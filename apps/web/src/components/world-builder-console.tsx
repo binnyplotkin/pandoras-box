@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { VisibleWorld, WorldDefinition } from "@pandora/types";
+import { VisibleWorld, WorldDefinition } from "@odyssey/types";
 
 type BuildWorldResponse = {
   world: VisibleWorld;

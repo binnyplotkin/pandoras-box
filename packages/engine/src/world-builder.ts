@@ -5,8 +5,8 @@ import {
   getNarratorVoiceProfile,
   normalizeVoiceProfile,
 } from "./voice-mapping";
-import type { WorldDefinition } from "@pandora/types";
-import { worldDefinitionSchema } from "@pandora/types";
+import type { WorldDefinition } from "@odyssey/types";
+import { worldDefinitionSchema } from "@odyssey/types";
 
 function normalizePrompt(prompt: string) {
   return prompt.trim().replace(/\s+/g, " ");

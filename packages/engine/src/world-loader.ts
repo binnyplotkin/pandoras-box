@@ -1,6 +1,6 @@
 import { WorldLoader } from "./interfaces";
-import { getWorldRepository } from "@pandora/db";
-import { WorldDefinition } from "@pandora/types";
+import { getWorldRepository } from "@odyssey/db";
+import { WorldDefinition } from "@odyssey/types";
 
 export class StaticWorldLoader implements WorldLoader {
   constructor(private readonly staticWorlds: WorldDefinition[] = []) {}

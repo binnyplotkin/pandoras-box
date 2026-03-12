@@ -1,4 +1,4 @@
-import type { CharacterDefinition, WorldDefinition } from "@pandora/types";
+import type { CharacterDefinition, WorldDefinition } from "@odyssey/types";
 
 export type VoiceProvider = "elevenlabs" | "openai";
 
@@ -29,7 +29,7 @@ type VoiceCacheState = {
 };
 
 const globalVoiceCache = globalThis as typeof globalThis & {
-  __pandoraElevenVoiceCache?: VoiceCacheState;
+  __odysseyElevenVoiceCache?: VoiceCacheState;
 };
 
 const ELEVENLABS_VOICE_CACHE_TTL_MS = 5 * 60 * 1000;
@@ -174,7 +174,7 @@ async function fetchAvailableElevenLabsVoices() {
   }
 
   const now = Date.now();
-  const cached = globalVoiceCache.__pandoraElevenVoiceCache;
+  const cached = globalVoiceCache.__odysseyElevenVoiceCache;
 
   if (
     cached &&
@@ -228,7 +228,7 @@ async function fetchAvailableElevenLabsVoices() {
     ? voices
     : voices.filter((voice) => voice.category !== "professional");
 
-  globalVoiceCache.__pandoraElevenVoiceCache = {
+  globalVoiceCache.__odysseyElevenVoiceCache = {
     allowProfessionalVoices: allowProfessional,
     rawVoices: voices,
     filteredVoices: filtered,
@@ -242,7 +242,7 @@ export async function getVoiceDiscoveryDebugInfo() {
   const hasApiKey = Boolean(process.env.ELEVENLABS_API_KEY);
   const allowProfessional = allowProfessionalVoices();
   const now = Date.now();
-  const cached = globalVoiceCache.__pandoraElevenVoiceCache;
+  const cached = globalVoiceCache.__odysseyElevenVoiceCache;
   const cacheHit = Boolean(
     cached &&
       cached.expiresAt > now &&
@@ -270,7 +270,7 @@ export async function getVoiceDiscoveryDebugInfo() {
   try {
     await fetchAvailableElevenLabsVoices();
 
-    const snapshot = globalVoiceCache.__pandoraElevenVoiceCache;
+    const snapshot = globalVoiceCache.__odysseyElevenVoiceCache;
     const rawVoices = snapshot?.rawVoices ?? [];
     const filteredVoices = snapshot?.filteredVoices ?? [];
 

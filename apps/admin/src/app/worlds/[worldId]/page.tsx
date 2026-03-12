@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getWorldRepository } from "@pandora/db";
+import { getWorldRepository } from "@odyssey/db";
 
 export const dynamic = "force-dynamic";
 

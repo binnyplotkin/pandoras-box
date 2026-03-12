@@ -1,5 +1,5 @@
 import { kingdomWorld } from "@/data/worlds/kingdom";
-import { visibleWorldSchema, WorldDefinition } from "@pandora/types";
+import { visibleWorldSchema, WorldDefinition } from "@odyssey/types";
 
 const worlds = [kingdomWorld] satisfies WorldDefinition[];
 

@@ -2,10 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   transpilePackages: [
-    "@pandora/types",
-    "@pandora/utils",
-    "@pandora/db",
-    "@pandora/engine",
+    "@odyssey/types",
+    "@odyssey/utils",
+    "@odyssey/db",
+    "@odyssey/engine",
+    "@odyssey/ui",
   ],
 };
 

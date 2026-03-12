@@ -1,5 +1,5 @@
 import { EventSelector } from "./interfaces";
-import { EventTemplate, SimulationState, WorldDefinition } from "@pandora/types";
+import { EventTemplate, SimulationState, WorldDefinition } from "@odyssey/types";
 
 function eventMatchesState(event: EventTemplate, state: SimulationState) {
   const trigger = event.triggerWhen;

@@ -1,5 +1,5 @@
 import { PolicyGuard } from "./interfaces";
-import { TurnInput, WorldDefinition } from "@pandora/types";
+import { TurnInput, WorldDefinition } from "@odyssey/types";
 
 const blockedPatterns = [
   "sexual violence",

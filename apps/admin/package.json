@@ -1,5 +1,5 @@
 {
-  "name": "@pandora/admin",
+  "name": "@odyssey/admin",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -8,9 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
-    "@pandora/types": "*",
-    "@pandora/db": "*",
-    "@pandora/utils": "*",
+    "@odyssey/types": "*",
+    "@odyssey/db": "*",
+    "@odyssey/ui": "*",
+    "@odyssey/utils": "*",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"

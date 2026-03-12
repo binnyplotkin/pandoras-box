@@ -1,7 +1,7 @@
 import { getOpenAIClient } from "./openai-client";
 import { TextGenerationAdapter } from "./interfaces";
-import { createId } from "@pandora/utils";
-import { EventTemplate, SimulationState, TurnInput, TurnResult, WorldDefinition } from "@pandora/types";
+import { createId } from "@odyssey/utils";
+import { EventTemplate, SimulationState, TurnInput, TurnResult, WorldDefinition } from "@odyssey/types";
 
 function fallbackOutput(params: {
   world: WorldDefinition;
@@ -70,7 +70,7 @@ function buildResponseRequest(params: {
           {
             type: "input_text" as const,
             text: [
-              "You are the orchestration layer for Pandora's Box.",
+              "You are the orchestration layer for Odyssey.",
               "Respond as JSON with keys narration, dialogue, uiChoices, audioDirectives.",
               "Keep the world coherent, grounded in the provided setting, and consequential.",
               `World: ${params.world.title}.`,

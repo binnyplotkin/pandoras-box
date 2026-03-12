@@ -1,5 +1,5 @@
 {
-  "name": "pandoras-box",
+  "name": "odyssey",
   "version": "0.1.0",
   "private": true,
   "packageManager": "npm@10.9.4",
@@ -9,8 +9,8 @@
   ],
   "scripts": {
     "dev": "turbo dev",
-    "dev:web": "turbo dev --filter=@pandora/web",
-    "dev:admin": "turbo dev --filter=@pandora/admin",
+    "dev:web": "turbo dev --filter=@odyssey/web",
+    "dev:admin": "turbo dev --filter=@odyssey/admin",
     "build": "turbo build",
     "lint": "turbo lint",
     "test": "vitest run",

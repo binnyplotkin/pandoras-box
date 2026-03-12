@@ -1,8 +1,8 @@
 import { desc, eq } from "drizzle-orm";
 import { getDb } from "./client";
 import { worldsTable } from "./schema";
-import { isoNow } from "@pandora/utils";
-import { WorldDefinition, worldRecordSchema, WorldRecord } from "@pandora/types";
+import { isoNow } from "@odyssey/utils";
+import { WorldDefinition, worldRecordSchema, WorldRecord } from "@odyssey/types";
 
 export type WorldSource = "static" | "dynamic";
 
@@ -30,12 +30,12 @@ type WorldStoreState = {
 };
 
 const globalWorldStore = globalThis as typeof globalThis & {
-  __pandoraWorldStore?: WorldStoreState;
+  __odysseyWorldStore?: WorldStoreState;
 };
 
 const memoryWorldStore =
-  globalWorldStore.__pandoraWorldStore ??
-  (globalWorldStore.__pandoraWorldStore = {
+  globalWorldStore.__odysseyWorldStore ??
+  (globalWorldStore.__odysseyWorldStore = {
     worlds: new Map(),
   });
 

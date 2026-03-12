@@ -1,4 +1,4 @@
-import { EventTemplate, SimulationState, TurnInput, TurnResult, WorldDefinition } from "@pandora/types";
+import { EventTemplate, SimulationState, TurnInput, TurnResult, WorldDefinition } from "@odyssey/types";
 
 export interface SpeechToTextAdapter {
   transcribe(input: { audioBase64: string; mimeType: string }): Promise<string>;

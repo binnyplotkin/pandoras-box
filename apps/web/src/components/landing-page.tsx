@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { VisibleWorld } from "@pandora/types";
+import { VisibleWorld } from "@odyssey/types";
 
 type SessionEnvelope = {
   session: {
@@ -604,8 +604,8 @@ export function LandingPage({ worlds }: { worlds: VisibleWorld[] }) {
         <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 pb-8 pt-10 text-center md:px-6 lg:px-8">
           <div className="mx-auto w-full max-w-4xl">
             <Image
-              src="/pandoras-box-icon.svg"
-              alt="Pandora's Box"
+              src="/odyssey-icon.svg"
+              alt="Odyssey"
               width={40}
               height={40}
               className="mx-auto h-10 w-10 brightness-0 invert"
@@ -638,7 +638,7 @@ export function LandingPage({ worlds }: { worlds: VisibleWorld[] }) {
                 className="absolute right-3 top-1/2 inline-flex h-9 min-w-9 -translate-y-1/2 items-center justify-center rounded-[12px] border border-white/24 bg-white/10 px-2 text-white transition hover:bg-white/18 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 <Image
-                  src="/pandoras-box-icon.svg"
+                  src="/odyssey-icon.svg"
                   alt=""
                   aria-hidden="true"
                   width={16}

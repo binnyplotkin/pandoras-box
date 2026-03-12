@@ -6,7 +6,7 @@ import {
   SessionRecord,
   turnRecordSchema,
   TurnRecord,
-} from "@pandora/types";
+} from "@odyssey/types";
 
 type StoreState = {
   sessions: Map<string, SessionRecord>;
@@ -14,12 +14,12 @@ type StoreState = {
 };
 
 const globalStore = globalThis as typeof globalThis & {
-  __pandoraStore?: StoreState;
+  __odysseyStore?: StoreState;
 };
 
 const memoryStore =
-  globalStore.__pandoraStore ??
-  (globalStore.__pandoraStore = {
+  globalStore.__odysseyStore ??
+  (globalStore.__odysseyStore = {
     sessions: new Map(),
     turns: new Map(),
   });

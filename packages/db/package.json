@@ -1,5 +1,5 @@
 {
-  "name": "@pandora/db",
+  "name": "@odyssey/db",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -10,8 +10,8 @@
     }
   },
   "dependencies": {
-    "@pandora/types": "*",
-    "@pandora/utils": "*",
+    "@odyssey/types": "*",
+    "@odyssey/utils": "*",
     "@neondatabase/serverless": "^1.0.2",
     "drizzle-orm": "^0.45.1"
   }

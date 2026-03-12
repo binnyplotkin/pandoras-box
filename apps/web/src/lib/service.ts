@@ -1,5 +1,5 @@
 import { getWorldDefinitions } from "@/data/worlds";
-import { createSimulationService } from "@pandora/engine";
+import { createSimulationService } from "@odyssey/engine";
 
 export const {
   listWorlds,

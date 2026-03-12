@@ -1,4 +1,4 @@
-import { getWorldRepository, getPersistenceStore } from "@pandora/db";
+import { getWorldRepository, getPersistenceStore } from "@odyssey/db";
 import { StatCard } from "@/components/stat-card";
 
 export const dynamic = "force-dynamic";

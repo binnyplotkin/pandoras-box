@@ -1,8 +1,5 @@
-import { LandingPage } from "@/components/landing-page";
-import { listWorlds } from "@/lib/service";
+import { LandingPageV3 } from "@/components/landing-page-v3";
 
-export default async function Home() {
-  const worlds = await listWorlds();
-
-  return <LandingPage worlds={worlds} />;
+export default function Home() {
+  return <LandingPageV3 />;
 }

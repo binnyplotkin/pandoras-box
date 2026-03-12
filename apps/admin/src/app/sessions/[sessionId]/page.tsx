@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getPersistenceStore } from "@pandora/db";
+import { getPersistenceStore } from "@odyssey/db";
 
 export const dynamic = "force-dynamic";
 

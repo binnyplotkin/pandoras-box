@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState, useTransition } from "react";
-import { SessionRecord, TurnRecord, VisibleWorld } from "@pandora/types";
+import { SessionRecord, TurnRecord, VisibleWorld } from "@odyssey/types";
 
 type AudioDirective = {
   type: "speak" | "await-input";

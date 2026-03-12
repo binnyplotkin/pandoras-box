@@ -1,8 +1,8 @@
-import { WorldDefinition } from "@pandora/types";
+import { WorldDefinition } from "@odyssey/types";
 import {
   getCharacterVoiceProfile,
   getNarratorVoiceProfile,
-} from "@pandora/engine";
+} from "@odyssey/engine";
 
 export const kingdomWorld: WorldDefinition = {
   id: "the-king",
