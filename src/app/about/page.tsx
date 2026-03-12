@@ -50,16 +50,7 @@ export default function AboutPage() {
             className="w-full object-cover"
             priority
           />
-          <div
-            className="absolute bottom-0 left-0 right-0 px-6 py-4 text-xs text-center"
-            style={{
-              background: "linear-gradient(to top, rgba(10,10,20,0.9), transparent)",
-              color: "rgba(255,255,255,0.6)",
-              fontFamily: "var(--font-mono)",
-            }}
-          >
-            Central Park, 2024. The rock was real. The crowns were inevitable.
-          </div>
+          {/* caption removed */}
         </div>
       </section>
 
@@ -123,12 +114,9 @@ export default function AboutPage() {
 
           {/* Use Case 1 */}
           <div className="space-y-4 pl-0">
-            <div className="flex items-center gap-3">
-              <span className="text-3xl">🎬</span>
-              <div>
-                <p className="text-xs uppercase tracking-widest opacity-40" style={{ fontFamily: "var(--font-mono)" }}>Use Case I</p>
-                <h3 className="text-2xl font-bold" style={{ fontFamily: "var(--font-display)" }}>The Big Effect — Be Careful What You Wish For</h3>
-              </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest opacity-40" style={{ fontFamily: "var(--font-mono)" }}>Use Case I</p>
+              <h3 className="text-2xl font-bold" style={{ fontFamily: "var(--font-display)" }}>The Big Effect — Be Careful What You Wish For</h3>
             </div>
             <p className="text-lg leading-relaxed opacity-80">
               In the film <em>Big</em>, a twelve-year-old boy wishes to be big — and wakes up to discover that the life he wanted isn&apos;t quite what he imagined. The magic isn&apos;t the wish. The magic is what the wish teaches him about the life he already had.
@@ -143,12 +131,9 @@ export default function AboutPage() {
 
           {/* Use Case 2 */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <span className="text-3xl">🧠</span>
-              <div>
-                <p className="text-xs uppercase tracking-widest opacity-40" style={{ fontFamily: "var(--font-mono)" }}>Use Case II</p>
-                <h3 className="text-2xl font-bold" style={{ fontFamily: "var(--font-display)" }}>The Training Ground — Practice Makes Presence</h3>
-              </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest opacity-40" style={{ fontFamily: "var(--font-mono)" }}>Use Case II</p>
+              <h3 className="text-2xl font-bold" style={{ fontFamily: "var(--font-display)" }}>The Training Ground — Practice Makes Presence</h3>
             </div>
             <p className="text-lg leading-relaxed opacity-80">
               Athletes run the play in their minds before they run it on the field. Great speakers rehearse the room before they walk into it. Performers live the character before the curtain rises. Repetition builds presence. And presence is confidence in motion.
@@ -163,12 +148,9 @@ export default function AboutPage() {
 
           {/* Use Case 3 */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <span className="text-3xl">✨</span>
-              <div>
-                <p className="text-xs uppercase tracking-widest opacity-40" style={{ fontFamily: "var(--font-mono)" }}>Use Case III</p>
-                <h3 className="text-2xl font-bold" style={{ fontFamily: "var(--font-display)" }}>The Inner Journey — Navigating Your Own Universe</h3>
-              </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest opacity-40" style={{ fontFamily: "var(--font-mono)" }}>Use Case III</p>
+              <h3 className="text-2xl font-bold" style={{ fontFamily: "var(--font-display)" }}>The Inner Journey — Navigating Your Own Universe</h3>
             </div>
             <p className="text-lg leading-relaxed opacity-80">
               There is a version of this that goes deeper than entertainment, deeper than training — into the territory of the soul itself.
@@ -211,7 +193,7 @@ export default function AboutPage() {
                   <p className="text-xs uppercase tracking-widest opacity-50" style={{ fontFamily: "var(--font-mono)" }}>Co-founder</p>
                   <h3 className="text-xl font-bold" style={{ fontFamily: "var(--font-display)" }}>Binny Plotkin</h3>
                   <p className="text-sm leading-relaxed opacity-70">
-                    Builder, storyteller, and the person who looked at the question &ldquo;what does it feel like to be a king&rdquo; and said — let&apos;s find out. Binny is drawn to language, mythology, and the sacred inner journey of returning to the deepest self. He believes within each person lives a vast inner infinity, waiting to be remembered. His thesis: the best technology vanishes. What remains is the experience.
+                    Binny Plotkin is a builder and storyteller drawn to the intersection of technology, mythology, and the inner life. His work is rooted in the belief that within each person lives a vast inner infinity — and that the most powerful experiences are the ones that help us return to it. He approaches product development as a craft of meaning: technology, in his view, should disappear. What endures is the experience it leaves behind.
                   </p>
                 </div>
               </div>
@@ -233,7 +215,7 @@ export default function AboutPage() {
                   <p className="text-xs uppercase tracking-widest opacity-50" style={{ fontFamily: "var(--font-mono)" }}>Co-founder</p>
                   <h3 className="text-xl font-bold" style={{ fontFamily: "var(--font-display)" }}>Josh Sassoon</h3>
                   <p className="text-sm leading-relaxed opacity-70">
-                    The man with an uncanny instinct for finding the most interesting version of any idea and saying it out loud before anyone has the chance to overthink it. Josh has a rare ability to hold vision and execution simultaneously — to dream wildly and build precisely. Pandora&apos;s Box exists because he asked the question no one else thought to ask.
+                    Josh Sassoon is a builder with an uncommon capacity to hold vision and execution in the same hand — to think with genuine philosophical depth while remaining sharply focused on what it takes to bring something real into the world. He has a rare instinct for identifying the questions worth asking, and the conviction to pursue them before the path is clear. Pandora&apos;s Box reflects both of those qualities.
                   </p>
                 </div>
               </div>
