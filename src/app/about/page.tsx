@@ -199,12 +199,12 @@ export default function AboutPage() {
                 className="rounded-2xl overflow-hidden"
                 style={{ background: "var(--panel)", border: "1px solid var(--border)" }}
               >
-                <div className="aspect-[4/3] relative overflow-hidden">
+                <div className="aspect-square relative overflow-hidden">
                   <Image
                     src="/founders-binny.jpg"
                     alt="Binny Plotkin, Co-founder of Pandora's Box"
                     fill
-                    className="object-cover"
+                    className="object-cover object-center"
                   />
                 </div>
                 <div className="p-6 space-y-2">
@@ -221,12 +221,12 @@ export default function AboutPage() {
                 className="rounded-2xl overflow-hidden"
                 style={{ background: "var(--panel)", border: "1px solid var(--border)" }}
               >
-                <div className="aspect-[4/3] relative overflow-hidden">
+                <div className="aspect-square relative overflow-hidden">
                   <Image
                     src="/founders-josh.jpg"
                     alt="Josh Sassoon, Co-founder of Pandora's Box"
                     fill
-                    className="object-cover"
+                    className="object-cover object-center"
                   />
                 </div>
                 <div className="p-6 space-y-2">
