@@ -1,0 +1,81 @@
+/*
+ * Odyssey — Forest Theme
+ *
+ * Immersive, narrative-driven palette extracted from the landing-page
+ * hero image (packages/media/landing_page.jpeg).
+ *
+ * Palette anchors:
+ *   #000500  near-black green    → forest-950
+ *   #0F2006  dark forest         → forest-900
+ *   #192922  deep forest         → forest-800
+ *   #2A4535  dark sage           → forest-700
+ *   #05473F  deep teal           → forest-600
+ *   #105A59  teal                → forest-500
+ *   #8CE7D2  mint                → forest-300
+ *   #C7F7E5  light mint          → forest-200 / forest-100
+ *   #DBFDFF  ice cyan            → forest-50
+ */
+
+:root {
+  /* ── Raw palette scale ──────────────────────────────────── */
+  --forest-950: #000500;
+  --forest-900: #0F2006;
+  --forest-800: #192922;
+  --forest-700: #2A4535;
+  --forest-600: #05473F;
+  --forest-500: #105A59;
+  --forest-400: #3A8B7A;
+  --forest-300: #8CE7D2;
+  --forest-200: #C7F7E5;
+  --forest-100: #E3FBF2;
+  --forest-50:  #DBFDFF;
+
+  /* ── Semantic tokens ────────────────────────────────────── */
+
+  /* Surfaces */
+  --background: #DBFDFF;
+  --foreground: #000500;
+  --panel: rgba(199, 247, 229, 0.62);
+  --panel-strong: rgba(25, 41, 34, 0.92);
+  --panel-strong-text: #E3FBF2;
+
+  /* Borders & shadows */
+  --border: rgba(5, 71, 63, 0.16);
+  --shadow: rgba(0, 5, 0, 0.14);
+
+  /* Accent */
+  --accent: #105A59;
+  --accent-strong: #05473F;
+  --accent-soft: #8CE7D2;
+
+  /* Text */
+  --muted: #2A4535;
+
+  /* Status */
+  --success: #05473F;
+  --danger: #9b4b3b;
+
+  /* Grid overlay (body::before) */
+  --grid-color: rgba(15, 32, 6, 0.04);
+  --grid-size: 28px;
+}
+
+/* ── Atmospheric grid overlay ─────────────────────────────── */
+
+body::before {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 90%);
+}
+
+/* ── Forest-specific typography ───────────────────────────── */
+
+body {
+  font-family: var(--font-display, "Fraunces"), serif;
+}

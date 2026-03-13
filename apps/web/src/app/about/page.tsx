@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About — Odyssey",
   description:
-    "How two guys on a rock in Central Park decided they wanted to build a door into every world imaginable — and why it matters.",
+    "Odyssey is an immersive reality engine that opens the door to infinite worlds — reshaping how people learn, create, and experience life.",
 };
 
 export default function AboutPage() {
@@ -16,8 +16,8 @@ export default function AboutPage() {
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/about-hero.jpg"
-            alt="Two young visionaries sitting on a rock in Central Park, imagining infinite worlds — depicted as an 1820s Romantic oil painting"
+            src="/infinite-worlds.png"
+            alt="An expansive vista of infinite worlds — luminous landscapes, floating realms, and vast possibilities stretching to the horizon"
             fill
             className="object-cover"
             priority
@@ -74,21 +74,21 @@ export default function AboutPage() {
         <div className="relative z-10 flex min-h-[75vh] flex-col justify-end px-6 pb-16 sm:px-10">
           <div className="max-w-2xl space-y-5">
             <p className="text-[10px] uppercase tracking-[0.25em] text-white/50">
-              Origin Story
+              The Vision
             </p>
             <h1
               className="text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              <span style={{ color: "#8fd1cb" }}>Two Kings.</span>
+              <span style={{ color: "#8fd1cb" }}>Infinite Worlds.</span>
               <br />
-              One Rock.
+              One Engine.
               <br />
-              Infinite Worlds.
+              Limitless Potential.
             </h1>
             <p className="max-w-lg text-sm leading-relaxed text-white/65 lg:text-base">
-              How a single question asked in Central Park became a door into
-              every world you&apos;ve ever imagined — and a few you haven&apos;t.
+              Odyssey is an immersive reality engine that opens the door to
+              every world imaginable — and builds the ones that haven&apos;t been imagined yet.
             </p>
           </div>
         </div>
@@ -102,34 +102,31 @@ export default function AboutPage() {
             {/* The Origin */}
             <div className="space-y-5">
               <p className="text-[10px] uppercase tracking-[0.25em] text-white/40">
-                I. The Question
+                I. The Idea
               </p>
               <h2
                 className="text-3xl font-semibold tracking-[-0.02em] sm:text-4xl"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                It Started on a Rock
+                A Door Into Every World
               </h2>
               <div className="space-y-5 text-base leading-relaxed text-white/70 sm:text-lg">
                 <p>
-                  Somewhere in Central Park, on an unremarkable afternoon that turned out to be remarkably important, <strong className="text-white/90">Binny Plotkin</strong> and <strong className="text-white/90">Josh Sassoon</strong> were sitting on a boulder — the way serious people sit when they&apos;re trying to think about something bigger than themselves.
+                  Odyssey began with a deceptively simple premise: what if technology could place you — fully, convincingly, consequentially — inside any world you could describe?
                 </p>
                 <p>
-                  The conversation had that particular quality where the words start saying themselves, and you&apos;re really just listening. They talked about identity. About imagination. About the strange human ache of wanting to know what it would feel like to be someone entirely different — not to escape your life, but to understand it more deeply.
+                  Not a game with predefined outcomes. Not a simulation with guardrails. A living, adaptive environment that responds to your choices with the depth and unpredictability of reality itself. A medieval court where your diplomacy has real political consequences. A deep-sea expedition where every decision reshapes the mission. A jazz club in 1940s Harlem where the music shifts with the room.
                 </p>
               </div>
               <blockquote
                 className="rounded-2xl border border-white/10 bg-white/5 px-6 py-5 text-xl font-medium italic backdrop-blur-md sm:text-2xl"
                 style={{ color: "#8fd1cb" }}
               >
-                &ldquo;What would it actually <em>feel like</em> to be a king?&rdquo;
+                &ldquo;The most powerful technology disappears. What remains is the experience.&rdquo;
               </blockquote>
               <div className="space-y-5 text-base leading-relaxed text-white/70 sm:text-lg">
                 <p>
-                  Not a metaphorical king. Not a chess piece. A real one — with weight and responsibility, with subjects who need things from you and advisors who may or may not be plotting something. The texture of a different life, fully inhabited.
-                </p>
-                <p>
-                  That question cracked something open. And Odyssey was born in the space between the asking and the answer.
+                  That conviction — that the technology should vanish behind the world it creates — became the founding principle of Odyssey. Every architectural decision, every model integration, every interface choice flows from it.
                 </p>
               </div>
             </div>
@@ -137,20 +134,20 @@ export default function AboutPage() {
             {/* The Thesis */}
             <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-md sm:p-8">
               <p className="text-[10px] uppercase tracking-[0.25em] text-white/40">
-                The Premise
+                The Engine
               </p>
               <h3
                 className="mt-3 text-2xl font-semibold tracking-[-0.02em] sm:text-3xl"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                What If You Could Step Into Any World?
+                Worlds That Think, Adapt, and Respond
               </h3>
               <div className="mt-4 space-y-4 text-sm leading-relaxed text-white/70 sm:text-base">
                 <p>
-                  Every person carries within them a vast inner universe — and a quiet, persistent curiosity about what it would feel like to live inside someone else&apos;s. Fiction gets you partway there. Method acting gets you closer. But nothing quite puts you <em>inside</em> an experience the way a living, responsive, adaptive world can.
+                  At the core of Odyssey is an immersive reality engine capable of generating, maintaining, and evolving entire worlds in real time. It holds persistent memory of characters, environments, and consequences. It adapts narratives to your decisions without breaking coherence. It renders experiences that feel less like software and more like stepping through a threshold.
                 </p>
                 <p>
-                  Odyssey is an immersive reality engine. You step in. You choose a world. You inhabit a role — medieval king, deep-sea explorer, jazz musician in 1940s Harlem, a space captain navigating the politics of three civilizations. And then you <em>live it</em>, with consequence, surprise, and the full weight of a world that responds to you.
+                  The engine is built on advances in large-scale language models, real-time state management, and adaptive narrative architecture — technologies that simply did not exist at this level of maturity until now. Odyssey is what becomes possible when you point that infrastructure at the oldest human desire: to live inside a story.
                 </p>
               </div>
             </div>
@@ -158,16 +155,16 @@ export default function AboutPage() {
             {/* Why It Matters */}
             <div className="space-y-5">
               <p className="text-[10px] uppercase tracking-[0.25em] text-white/40">
-                II. Why It Matters
+                II. The Opportunity
               </p>
               <h2
                 className="text-3xl font-semibold tracking-[-0.02em] sm:text-4xl"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                Three Doors. One Box.
+                What Infinite Worlds Unlock
               </h2>
               <p className="text-base leading-relaxed text-white/70 sm:text-lg">
-                Odyssey isn&apos;t just entertainment. It&apos;s a tool for the examined life — one that can unlock different things in different people.
+                When you can step into any world with full consequence and fidelity, entirely new categories of value emerge — across entertainment, education, professional development, and human understanding.
               </p>
             </div>
 
@@ -176,21 +173,21 @@ export default function AboutPage() {
               {/* Use Case 1 */}
               <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-md">
                 <p className="text-[10px] uppercase tracking-[0.25em] text-white/40">
-                  Use Case I
+                  Dimension I
                 </p>
                 <h3
                   className="mt-3 text-lg font-semibold tracking-[-0.01em]"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
-                  The Big Effect
+                  Experiential Understanding
                 </h3>
-                <p className="mt-1 text-xs italic text-white/40">Be Careful What You Wish For</p>
+                <p className="mt-1 text-xs italic text-white/40">Know It by Living It</p>
                 <div className="mt-4 space-y-3 text-sm leading-relaxed text-white/60">
                   <p>
-                    In the film <em>Big</em>, a twelve-year-old boy wishes to be big — and wakes up to discover that the life he wanted isn&apos;t quite what he imagined.
+                    Reading about leadership is one thing. Navigating a political crisis with real stakes, real advisors, and real consequences is another. Odyssey collapses the distance between concept and experience.
                   </p>
                   <p>
-                    Step into the role of a king, and you might discover the loneliness at the top of the tower. The world you step into isn&apos;t an escape. It&apos;s a mirror.
+                    Step into a role, and you don&apos;t just learn what it requires — you feel the weight of it. The world becomes a mirror that reveals things a textbook never could.
                   </p>
                 </div>
               </div>
@@ -198,21 +195,21 @@ export default function AboutPage() {
               {/* Use Case 2 */}
               <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-md">
                 <p className="text-[10px] uppercase tracking-[0.25em] text-white/40">
-                  Use Case II
+                  Dimension II
                 </p>
                 <h3
                   className="mt-3 text-lg font-semibold tracking-[-0.01em]"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
-                  The Training Ground
+                  High-Fidelity Preparation
                 </h3>
-                <p className="mt-1 text-xs italic text-white/40">Practice Makes Presence</p>
+                <p className="mt-1 text-xs italic text-white/40">Rehearsal at the Speed of Reality</p>
                 <div className="mt-4 space-y-3 text-sm leading-relaxed text-white/60">
                   <p>
-                    Athletes run the play in their minds before they run it on the field. Performers live the character before the curtain rises. Repetition builds presence.
+                    Surgeons practice on simulations before they operate. Pilots train in cockpits that never leave the ground. Odyssey extends that principle to any domain — leadership, negotiation, crisis management, creative performance.
                   </p>
                   <p>
-                    The reps you put in here don&apos;t disappear when you close the session. They live in your body. Your intuition. Your calm.
+                    The reps you put in here build real intuition. Real composure. Real readiness — applicable the moment you step back into the world outside.
                   </p>
                 </div>
               </div>
@@ -220,31 +217,107 @@ export default function AboutPage() {
               {/* Use Case 3 */}
               <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-md">
                 <p className="text-[10px] uppercase tracking-[0.25em] text-white/40">
-                  Use Case III
+                  Dimension III
                 </p>
                 <h3
                   className="mt-3 text-lg font-semibold tracking-[-0.01em]"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
-                  The Inner Journey
+                  Creative & Narrative Innovation
                 </h3>
-                <p className="mt-1 text-xs italic text-white/40">Navigating Your Own Universe</p>
+                <p className="mt-1 text-xs italic text-white/40">Stories You Don&apos;t Watch — You Inhabit</p>
                 <div className="mt-4 space-y-3 text-sm leading-relaxed text-white/60">
                   <p>
-                    Immersive experience, when crafted with intention, becomes a vehicle for inner work. The metaphor gives you distance. The distance gives you clarity.
+                    Odyssey represents a new medium. Not a movie. Not a game. Not a book. Something that borrows from all three but is constrained by none of them.
                   </p>
                   <p>
-                    Joseph Campbell called it the Hero&apos;s Journey: a departure from the known, a descent into the unknown, and a return with something you couldn&apos;t have found without leaving.
+                    For creators, it&apos;s an entirely new canvas. For audiences, it&apos;s the experience they&apos;ve always wanted from fiction but could never quite reach — full immersion, full agency, full consequence.
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* Homage — The Original Worlds */}
+            <div className="space-y-5">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-white/40">
+                Where It Began
+              </p>
+              <h2
+                className="text-3xl font-semibold tracking-[-0.02em] sm:text-4xl"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                The First Worlds
+              </h2>
+              <p className="text-base leading-relaxed text-white/70 sm:text-lg">
+                Before the engine, before the architecture — there were two questions asked on a rock in Central Park that set everything in motion.
+              </p>
+
+              <div className="grid gap-5 sm:grid-cols-2">
+                {/* The King */}
+                <div className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-md sm:p-8">
+                  <div className="absolute -right-6 -top-6 text-[8rem] leading-none text-white/[0.03] transition-all group-hover:text-white/[0.06]" style={{ fontFamily: "var(--font-heading)" }}>
+                    &#9813;
+                  </div>
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-white/40">
+                    World I
+                  </p>
+                  <h3
+                    className="mt-3 text-xl font-semibold tracking-[-0.01em] sm:text-2xl"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
+                    What Would It Feel Like to Be a King?
+                  </h3>
+                  <div className="mt-4 space-y-3 text-sm leading-relaxed text-white/60 sm:text-base">
+                    <p>
+                      Not a figurehead. Not a character in a game. A real king — burdened by the weight of a crown, surrounded by advisors whose loyalty you can never quite verify, responsible for thousands of lives shaped by every decision you make.
+                    </p>
+                    <p>
+                      The loneliness at the top of the tower. The impossible calculus of mercy versus order. The moment you realize the throne doesn&apos;t grant wisdom — it demands it.
+                    </p>
+                    <p className="text-xs italic" style={{ color: "#8fd1cb" }}>
+                      This was the first question. The one that cracked the door open.
+                    </p>
+                  </div>
+                </div>
+
+                {/* The Pirate */}
+                <div className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-md sm:p-8">
+                  <div className="absolute -right-6 -top-6 text-[8rem] leading-none text-white/[0.03] transition-all group-hover:text-white/[0.06]" style={{ fontFamily: "var(--font-heading)" }}>
+                    &#9875;
+                  </div>
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-white/40">
+                    World II
+                  </p>
+                  <h3
+                    className="mt-3 text-xl font-semibold tracking-[-0.01em] sm:text-2xl"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
+                    What Would It Feel Like to Be a Pirate?
+                  </h3>
+                  <div className="mt-4 space-y-3 text-sm leading-relaxed text-white/60 sm:text-base">
+                    <p>
+                      Salt air. A crew that follows you only as long as you&apos;re worth following. A horizon that promises nothing and everything at once. The raw, ungoverned freedom of a life lived outside every structure the world tried to put you in.
+                    </p>
+                    <p>
+                      The thrill of the chase. The code that only matters when you choose to honor it. The discovery that freedom without purpose is just drift — and that the sea has a way of teaching you the difference.
+                    </p>
+                    <p className="text-xs italic" style={{ color: "#8fd1cb" }}>
+                      This was the second question. The one that proved the first wasn&apos;t a fluke.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-center text-sm leading-relaxed text-white/50 sm:text-base">
+                Two worlds. Two very different lives. But the same underlying revelation: the technology to make this real would change everything. Odyssey is the proof.
+              </p>
             </div>
 
             {/* Founders */}
             <div className="space-y-8">
               <div className="space-y-3">
                 <p className="text-[10px] uppercase tracking-[0.25em] text-white/40">
-                  III. The People
+                  III. The Team
                 </p>
                 <h2
                   className="text-3xl font-semibold tracking-[-0.02em] sm:text-4xl"
@@ -253,7 +326,7 @@ export default function AboutPage() {
                   The Founders
                 </h2>
                 <p className="text-base text-white/60">
-                  Two builders who took the question seriously enough to do something about it.
+                  Two builders with the vision to see what&apos;s possible and the resolve to make it real.
                 </p>
               </div>
 
@@ -325,13 +398,13 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-5 text-base leading-relaxed text-white/70 sm:text-lg">
                 <p>
-                  The technology to do this well didn&apos;t exist until recently. Language models that can hold an entire world in memory, generate coherent consequence and dialogue, adapt to your choices in real time — all of that became possible in a window that spans roughly the last two years.
+                  For decades, the vision of truly immersive, adaptive worlds existed only in science fiction. The computational infrastructure, the language understanding, the real-time narrative coherence — none of it was technically feasible at scale.
                 </p>
                 <p>
-                  The hunger for it is ancient. The tool is new. And we are standing at the exact moment where the two have finally met.
+                  That changed. Large language models capable of holding entire worlds in memory, generating coherent consequence and dialogue, and adapting to user choices in real time have reached a threshold of maturity that makes Odyssey not just possible — but inevitable.
                 </p>
                 <p>
-                  The rock in Central Park was always there. It just took a while for the rest of the world to catch up to the conversation that happened on it.
+                  The appetite for this kind of experience is ancient and universal. The technology is finally here. Odyssey exists at the precise intersection of the two — and the market it opens is as vast as the worlds it creates.
                 </p>
               </div>
             </div>
@@ -339,13 +412,13 @@ export default function AboutPage() {
             {/* CTA */}
             <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-8 text-center backdrop-blur-md sm:p-10">
               <p className="text-lg italic text-white/50">
-                &ldquo;The privilege of a lifetime is being who you are.&rdquo;
+                &ldquo;The only way to discover the limits of the possible is to venture past them into the impossible.&rdquo;
               </p>
               <p className="mt-1 text-[10px] uppercase tracking-[0.25em] text-white/30">
-                Joseph Campbell
+                Arthur C. Clarke
               </p>
               <p className="mx-auto mt-5 max-w-md text-sm text-white/50">
-                And sometimes — the quickest path back to yourself is the one that leads somewhere else first.
+                Odyssey is building the door. The worlds are waiting.
               </p>
               <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
                 <Link

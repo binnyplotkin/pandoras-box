@@ -1,0 +1,51 @@
+/*
+ * Odyssey — Neutral Theme
+ *
+ * Clean, data-focused palette for admin and tooling interfaces.
+ * Uses the same forest palette as accents but with neutral surfaces
+ * for readability in data-dense layouts.
+ */
+
+:root {
+  /* ── Raw palette scale (shared with forest) ─────────────── */
+  --forest-950: #000500;
+  --forest-900: #0F2006;
+  --forest-800: #192922;
+  --forest-700: #2A4535;
+  --forest-600: #05473F;
+  --forest-500: #105A59;
+  --forest-400: #3A8B7A;
+  --forest-300: #8CE7D2;
+  --forest-200: #C7F7E5;
+  --forest-100: #E3FBF2;
+  --forest-50:  #DBFDFF;
+
+  /* ── Semantic tokens ────────────────────────────────────── */
+
+  /* Surfaces */
+  --background: #f8f9fb;
+  --foreground: #111827;
+  --panel: #ffffff;
+  --panel-strong: #192922;
+  --panel-strong-text: #E3FBF2;
+
+  /* Borders & shadows */
+  --border: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.08);
+
+  /* Accent — forest teal carried through */
+  --accent: #105A59;
+  --accent-strong: #05473F;
+  --accent-soft: #C7F7E5;
+
+  /* Text */
+  --muted: #6b7280;
+
+  /* Status */
+  --success: #05473F;
+  --danger: #dc2626;
+}
+
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}

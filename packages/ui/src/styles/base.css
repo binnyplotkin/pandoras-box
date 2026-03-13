@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/*
+ * Odyssey Design System — Base Layer
+ *
+ * This file defines the token contract (variable names + Tailwind mapping)
+ * and shared utilities. Each app imports this, then a theme file that sets
+ * the actual variable values.
+ *
+ * Color palette derived from the landing-page hero image
+ * (packages/media/landing_page.jpeg):
+ *
+ *   #000500  near-black green
+ *   #0F2006  dark forest
+ *   #192922  deep forest
+ *   #2A4535  dark sage
+ *   #05473F  deep teal
+ *   #105A59  teal
+ *   #8CE7D2  mint
+ *   #C7F7E5  light mint
+ *   #DBFDFF  ice cyan
+ */
+
+/* ── Tailwind theme mapping ─────────────────────────────────── */
+
+@theme inline {
+  /* Typography */
+  --font-sans: var(--font-display, ui-sans-serif), system-ui, sans-serif;
+  --font-mono: var(--font-mono, ui-monospace), "Cascadia Code", monospace;
+
+  /* Semantic surface colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-panel: var(--panel);
+  --color-panel-strong: var(--panel-strong);
+  --color-border: var(--border);
+
+  /* Semantic accent colors */
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+
+  /* Semantic text colors */
+  --color-muted: var(--muted);
+
+  /* Semantic status colors */
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+
+  /* Palette — raw scale for one-off use */
+  --color-forest-950: var(--forest-950);
+  --color-forest-900: var(--forest-900);
+  --color-forest-800: var(--forest-800);
+  --color-forest-700: var(--forest-700);
+  --color-forest-600: var(--forest-600);
+  --color-forest-500: var(--forest-500);
+  --color-forest-400: var(--forest-400);
+  --color-forest-300: var(--forest-300);
+  --color-forest-200: var(--forest-200);
+  --color-forest-100: var(--forest-100);
+  --color-forest-50: var(--forest-50);
+}
+
+/* ── Reset & base ───────────────────────────────────────────── */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--foreground);
+  background: var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+/* ── Shared component classes ───────────────────────────────── */
+
+.panel {
+  background: var(--panel);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 80px var(--shadow);
+}
+
+.panel-strong {
+  background: var(--panel-strong);
+  color: var(--panel-strong-text);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
