@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, IBM_Plex_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { SessionProvider } from "@/components/session-provider";
 import "./globals.css";
 
 const displayFont = Fraunces({
@@ -76,7 +77,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${displayFont.variable} ${headingFont.variable} ${monoFont.variable}`}>
-        {children}
+        <SessionProvider>{children}</SessionProvider>
       </body>
     </html>
   );

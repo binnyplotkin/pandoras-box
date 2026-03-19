@@ -1,4 +1,60 @@
-import { integer, jsonb, pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import { integer, jsonb, pgTable, primaryKey, text, timestamp } from "drizzle-orm/pg-core";
+
+// ── Auth tables (Auth.js / NextAuth) ──────────────────────────────────
+
+export const usersTable = pgTable("users", {
+  id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
+  name: text("name"),
+  email: text("email").unique().notNull(),
+  emailVerified: timestamp("email_verified", { withTimezone: true }),
+  image: text("image"),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const accountsTable = pgTable(
+  "accounts",
+  {
+    userId: text("user_id")
+      .notNull()
+      .references(() => usersTable.id, { onDelete: "cascade" }),
+    type: text("type").notNull(),
+    provider: text("provider").notNull(),
+    providerAccountId: text("provider_account_id").notNull(),
+    refresh_token: text("refresh_token"),
+    access_token: text("access_token"),
+    expires_at: integer("expires_at"),
+    token_type: text("token_type"),
+    scope: text("scope"),
+    id_token: text("id_token"),
+    session_state: text("session_state"),
+  },
+  (table) => [
+    primaryKey({ columns: [table.provider, table.providerAccountId] }),
+  ],
+);
+
+export const authSessionsTable = pgTable("auth_sessions", {
+  sessionToken: text("session_token").primaryKey(),
+  userId: text("user_id")
+    .notNull()
+    .references(() => usersTable.id, { onDelete: "cascade" }),
+  expires: timestamp("expires", { withTimezone: true }).notNull(),
+});
+
+export const verificationTokensTable = pgTable(
+  "verification_tokens",
+  {
+    identifier: text("identifier").notNull(),
+    token: text("token").notNull(),
+    expires: timestamp("expires", { withTimezone: true }).notNull(),
+  },
+  (table) => [
+    primaryKey({ columns: [table.identifier, table.token] }),
+  ],
+);
+
+// ── Game tables ───────────────────────────────────────────────────────
 
 export const sessionsTable = pgTable("sessions", {
   id: text("id").primaryKey(),

@@ -110,6 +110,20 @@ export function LandingPageV3() {
             >
               About
             </Link>
+            <a
+              href="http://localhost:3001/builder"
+              className="rounded-full border border-white/15 bg-white/8 px-5 py-1.5 text-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] backdrop-blur-md transition-all hover:border-white/30 hover:bg-white/15 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]"
+              style={{ fontFamily: "var(--font-mono)" }}
+            >
+              Builder
+            </a>
+            <a
+              href="http://localhost:3001/engine"
+              className="rounded-full border border-white/15 bg-white/8 px-5 py-1.5 text-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] backdrop-blur-md transition-all hover:border-white/30 hover:bg-white/15 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]"
+              style={{ fontFamily: "var(--font-mono)" }}
+            >
+              Engine
+            </a>
           </nav>
 
           {/* Right CTAs */}

@@ -128,8 +128,8 @@ function stableHash(value: string) {
 
 function resolveVoiceId(blueprint: VoiceBlueprint) {
   return (
-    process.env[blueprint.envKey] ??
-    process.env.ELEVENLABS_VOICE_ID ??
+    process.env[blueprint.envKey]?.trim() ||
+    process.env.ELEVENLABS_VOICE_ID?.trim() ||
     blueprint.fallbackId
   );
 }

@@ -3,18 +3,20 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "dotenv -e ../../.env -- next dev",
+    "build": "dotenv -e ../../.env -- next build",
     "start": "next start",
     "lint": "eslint ."
   },
   "dependencies": {
-    "@odyssey/types": "*",
-    "@odyssey/utils": "*",
+    "@auth/drizzle-adapter": "^1.11.1",
     "@odyssey/db": "*",
     "@odyssey/engine": "*",
+    "@odyssey/types": "*",
     "@odyssey/ui": "*",
+    "@odyssey/utils": "*",
     "next": "16.1.6",
+    "next-auth": "^5.0.0-beta.30",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
