@@ -10,19 +10,20 @@ import {
   verificationTokensTable,
 } from "@odyssey/db";
 
-function getAuthDb() {
+function createAdapter() {
   const url = process.env.DATABASE_URL;
   if (!url) throw new Error("DATABASE_URL is required for auth");
-  return drizzle({ client: neon(url) });
-}
-
-export const { handlers, signIn, signOut, auth } = NextAuth({
-  adapter: DrizzleAdapter(getAuthDb(), {
+  const db = drizzle({ client: neon(url) });
+  return DrizzleAdapter(db, {
     usersTable,
     accountsTable,
     sessionsTable: authSessionsTable,
     verificationTokensTable,
-  }),
+  });
+}
+
+export const { handlers, signIn, signOut, auth } = NextAuth(() => ({
+  adapter: createAdapter(),
   providers: [Google],
   pages: {
     signIn: "/",
@@ -33,4 +34,4 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       return session;
     },
   },
-});
+}));
