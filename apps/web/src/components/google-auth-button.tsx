@@ -1,7 +1,8 @@
 "use client";
 
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function GoogleAuthButton() {
   const { data: session, status } = useSession();
@@ -17,8 +18,8 @@ export function GoogleAuthButton() {
 
   if (session?.user) {
     return (
-      <button
-        onClick={() => signOut()}
+      <Link
+        href="/dashboard"
         className="flex items-center gap-2 rounded-full border border-white/25 bg-white/15 px-4 py-1.5 text-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] backdrop-blur-lg transition-all hover:border-white/40 hover:bg-white/25"
         style={{ fontFamily: "var(--font-mono)" }}
       >
@@ -34,7 +35,7 @@ export function GoogleAuthButton() {
         <span className="max-w-[120px] truncate">
           {session.user.name ?? session.user.email}
         </span>
-      </button>
+      </Link>
     );
   }
 

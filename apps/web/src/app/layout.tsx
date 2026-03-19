@@ -1,23 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, IBM_Plex_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { SessionProvider } from "@/components/session-provider";
 import "./globals.css";
 
-const displayFont = Fraunces({
-  variable: "--font-display",
+const bodyFont = Inter({
+  variable: "--font-body",
   subsets: ["latin"],
 });
 
-const headingFont = Plus_Jakarta_Sans({
+const headingFont = Space_Grotesk({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const monoFont = IBM_Plex_Mono({
+const monoFont = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
 });
 
 const siteDescription =
@@ -76,7 +76,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${displayFont.variable} ${headingFont.variable} ${monoFont.variable}`}>
+      <body className={`${bodyFont.variable} ${headingFont.variable} ${monoFont.variable}`}>
         <SessionProvider>{children}</SessionProvider>
       </body>
     </html>

@@ -58,6 +58,7 @@ export const verificationTokensTable = pgTable(
 
 export const sessionsTable = pgTable("sessions", {
   id: text("id").primaryKey(),
+  userId: text("user_id").references(() => usersTable.id, { onDelete: "cascade" }),
   worldId: text("world_id").notNull(),
   roleId: text("role_id").notNull(),
   status: text("status").notNull(),
@@ -79,6 +80,7 @@ export const turnsTable = pgTable("turns", {
 
 export const worldsTable = pgTable("worlds", {
   id: text("id").primaryKey(),
+  userId: text("user_id").references(() => usersTable.id, { onDelete: "cascade" }),
   title: text("title").notNull(),
   prompt: text("prompt").notNull(),
   status: text("status").notNull(),

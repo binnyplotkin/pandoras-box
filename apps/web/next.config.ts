@@ -8,6 +8,14 @@ const nextConfig: NextConfig = {
     "@odyssey/engine",
     "@odyssey/ui",
   ],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
