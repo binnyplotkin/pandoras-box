@@ -169,7 +169,10 @@ export default function AboutPage() {
             </h3>
             <p className="mt-1 text-xs italic text-white/40">Know It by Living It</p>
             <p className="mt-4 text-sm leading-relaxed text-white/55">
-              Reading about leadership is one thing. Navigating a political crisis with real stakes, real advisors, and real consequences is another. Odyssey collapses the distance between concept and experience.
+              Experiential understanding transforms preparation into reality. Imagine someone who wants to overcome their fear of public speaking or sharpen their ability to communicate under pressure. Instead of rehearsing alone, they step into a simulation where they are presenting in front of a live audience that reacts in real time—showing engagement, boredom, judgment, or approval through realistic emotional responses. They can practice in different environments, from job interviews to high-stakes presentations in front of judges, and even control the difficulty of the room—whether it&apos;s a supportive audience or a critical panel designed to challenge them.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-white/55">
+              Today, this experience begins through advanced audio-based interaction, but the vision extends far beyond. With full VR integration, users will stand inside lifelike environments surrounded by human avatars that express emotion through facial expressions, tone, and body language—making the experience feel indistinguishable from reality. Through repeated exposure in these immersive scenarios, fear begins to dissolve, confidence becomes natural, and communication transforms into a mastered skill rather than a source of doubt.
             </p>
           </div>
 
@@ -188,7 +191,10 @@ export default function AboutPage() {
             </h3>
             <p className="mt-1 text-xs italic text-white/40">Rehearsal at the Speed of Reality</p>
             <p className="mt-4 text-sm leading-relaxed text-white/55">
-              Surgeons practice on simulations before they operate. Pilots train in cockpits that never leave the ground. Odyssey extends that principle to any domain — leadership, negotiation, crisis management, creative performance.
+              High-fidelity preparation turns practice into measurable performance. Surgeons rehearse before operating. Pilots train before flying. Odyssey extends that same principle to communication, leadership, negotiation, and crisis response through realistic simulation loops that let users fail safely, adjust quickly, and improve with intent.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-white/55">
+              As users move from Dimension I&apos;s emotional realism into repeatable high-pressure drills, they build not only confidence but consistency. The result is readiness that transfers beyond the simulation and into real-world decision-making.
             </p>
           </div>
 
@@ -207,7 +213,10 @@ export default function AboutPage() {
             </h3>
             <p className="mt-1 text-xs italic text-white/40">Stories You Don&apos;t Watch — You Inhabit</p>
             <p className="mt-4 text-sm leading-relaxed text-white/55">
-              Odyssey represents a new medium. Not a movie. Not a game. Not a book. Something that borrows from all three but is constrained by none of them. For creators, an entirely new canvas.
+              Creative and narrative innovation allows users to build entirely new worlds from knowledge itself. Imagine a history teacher who wants her students to truly understand the era of Napoleon. Instead of relying solely on lectures and textbooks, she gathers everything available—historical documents, lesson plans, primary sources—and feeds it into the system. From that, she creates a fully immersive world where Napoleon himself guides the student through his time period, walking them through key events, decisions, and environments as if they were living inside history.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-white/55">
+              Every piece of knowledge that would normally be studied for a test is embedded directly into the experience. To progress through the simulation, students must remember and apply what they’ve learned, unlocking new parts of the world as they demonstrate understanding. The result is not just memorization, but true comprehension—where education becomes an interactive journey, and learning feels like living through the story rather than reading about it.
             </p>
           </div>
         </div>
