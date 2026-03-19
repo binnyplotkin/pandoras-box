@@ -11,6 +11,7 @@ const items: SidebarItem[] = [
   { href: "/sessions", label: "Sessions", section: "Data" },
   { href: "/engine", label: "Engine", section: "Tools" },
   { href: "/builder", label: "Builder", section: "Tools" },
+  { href: "/roadmap", label: "Roadmap", section: "Tools" },
 ];
 
 function useTheme() {
