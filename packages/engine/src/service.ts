@@ -74,6 +74,7 @@ export function createSimulationService(
   options: CreateSimulationServiceOptions = {},
 ) {
   const worldLoader = new StaticWorldLoader(staticWorlds);
+  const worldRepository = getWorldRepository(staticWorlds);
   const generationAdapter =
     options.textGenerationAdapter ??
     options.textGenerationProvider?.createAdapter() ??
@@ -82,12 +83,12 @@ export function createSimulationService(
   const replayTurnProcessor = createTurnProcessor(getDeterministicTextGenerationAdapter());
 
   async function listWorlds(): Promise<VisibleWorld[]> {
-    const worlds = await getWorldRepository(staticWorlds).listWorlds();
+    const worlds = await worldRepository.listWorlds();
     return worlds.map((world) => visibleWorldSchema.parse(world));
   }
 
   async function getVisibleWorldById(worldId: string) {
-    const world = await worldLoader.getWorld(worldId);
+    const world = (await worldRepository.getWorldById(worldId)) ?? (await worldLoader.getWorld(worldId));
 
     if (!world) {
       return null;
@@ -97,7 +98,7 @@ export function createSimulationService(
   }
 
   async function getWorldDetailById(worldId: string) {
-    return getWorldRepository(staticWorlds).getWorldDetail(worldId);
+    return worldRepository.getWorldDetail(worldId);
   }
 
   async function updateWorldDefinition(worldId: string, rawDefinition: unknown) {
@@ -106,7 +107,7 @@ export function createSimulationService(
       id: worldId,
     });
 
-    return getWorldRepository(staticWorlds).updateWorld({ worldId, definition });
+    return worldRepository.updateWorld({ worldId, definition });
   }
 
   async function buildWorldFromPrompt(rawInput: unknown): Promise<BuildWorldResponse> {
@@ -118,7 +119,7 @@ export function createSimulationService(
 
     const { prompt } = worldBuildRequestSchema.parse(rawInput);
     const definition = await buildWorldDefinitionFromPrompt(prompt);
-    const record = await getWorldRepository(staticWorlds)
+    const record = await worldRepository
       .createWorldFromDefinition({
         prompt,
         definition,
@@ -147,7 +148,7 @@ export function createSimulationService(
   }
 
   async function startSession(worldId: string, roleId: string) {
-    const world = await worldLoader.getWorld(worldId);
+    const world = (await worldRepository.getWorldById(worldId)) ?? (await worldLoader.getWorld(worldId));
 
     if (!world) {
       throw new Error(`Unknown world: ${worldId}`);
@@ -211,7 +212,7 @@ export function createSimulationService(
       throw new Error(`Unknown session: ${sessionId}`);
     }
 
-    const world = await worldLoader.getWorld(session.worldId);
+    const world = (await worldRepository.getWorldById(session.worldId)) ?? (await worldLoader.getWorld(session.worldId));
 
     if (!world) {
       throw new Error(`Unknown world: ${session.worldId}`);
@@ -242,7 +243,7 @@ export function createSimulationService(
       throw new Error(`Unknown session: ${sessionId}`);
     }
 
-    const world = await worldLoader.getWorld(session.worldId);
+    const world = (await worldRepository.getWorldById(session.worldId)) ?? (await worldLoader.getWorld(session.worldId));
 
     if (!world) {
       throw new Error(`Unknown world: ${session.worldId}`);
@@ -337,7 +338,7 @@ export function createSimulationService(
       throw new Error("worldId, roleId, and text are required.");
     }
 
-    const world = await worldLoader.getWorld(body.worldId);
+    const world = (await worldRepository.getWorldById(body.worldId)) ?? (await worldLoader.getWorld(body.worldId));
 
     if (!world) {
       throw new Error(`Unknown world: ${body.worldId}`);

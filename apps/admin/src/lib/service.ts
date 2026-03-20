@@ -7,5 +7,9 @@ export const {
   getWorldDetailById,
   updateWorldDefinition,
   buildWorldFromPrompt,
+  startSession,
+  resumeSession,
+  processTurn,
+  createIntroResult,
   traceTurnPipeline,
 } = createSimulationService(getWorldDefinitions());

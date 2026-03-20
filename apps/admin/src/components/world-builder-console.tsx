@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
 import { VisibleWorld, WorldDefinition } from "@odyssey/types";
 
 type BuildWorldResponse = {
@@ -22,6 +23,7 @@ type WorldDetailResponse = {
 };
 
 export function WorldBuilderConsole() {
+  const router = useRouter();
   const [prompt, setPrompt] = useState("");
   const [buildResult, setBuildResult] = useState<BuildWorldResponse | null>(null);
   const [worldDetail, setWorldDetail] = useState<WorldDefinition | null>(null);
@@ -30,6 +32,165 @@ export function WorldBuilderConsole() {
   const [error, setError] = useState<string | null>(null);
   const [isBuilding, startBuilding] = useTransition();
   const [isSaving, startSaving] = useTransition();
+
+  function resolveInterviewMode(worldPrompt: string) {
+    const lowerPrompt = worldPrompt.toLowerCase();
+    const janeStreet =
+      /jane\s*street/.test(lowerPrompt) ||
+      lowerPrompt.includes("janestreet") ||
+      lowerPrompt.includes("jantestreet");
+    const mentionsInterviewIntent =
+      /interview|mock interview|practice interview|interview prep|prepare for interview/.test(
+        lowerPrompt,
+      ) ||
+      /panel interview|panel presentation|startup pitch|investor pitch|press interview/.test(
+        lowerPrompt,
+      ) ||
+      /high[-\s]?stakes q&a|high[-\s]?stakes qa/.test(lowerPrompt);
+    const mentionsInterview = janeStreet || mentionsInterviewIntent;
+
+    if (!mentionsInterview) {
+      return null;
+    }
+
+    const technical = janeStreet || /technical|engineer|quant|trading|system design/.test(lowerPrompt);
+    const caseInterview = /case interview|case study|consulting/.test(lowerPrompt);
+    const pitch = /startup pitch|investor pitch|pitch/.test(lowerPrompt);
+    const panel = /panel/.test(lowerPrompt);
+    const press = /press/.test(lowerPrompt);
+    const highStakesQa = /high-stakes q&a|high stakes q&a|high-stakes qa|high stakes qa/.test(
+      lowerPrompt,
+    );
+
+    if (technical) {
+      return {
+        jobType: janeStreet ? "Jane Street Quant Interview Candidate" : "Technical Interview Candidate",
+        interviewType: "technical-interview" as const,
+        industry: janeStreet ? "Finance" : "Technology",
+        difficultyLevel: janeStreet ? 10 : 7,
+        interviewerCount: janeStreet ? 3 : 2,
+        tone: janeStreet ? ("aggressive" as const) : ("balanced" as const),
+        timeLimitMinutes: janeStreet ? 300 : 35,
+      };
+    }
+
+    if (caseInterview) {
+      return {
+        jobType: "Case Interview Candidate",
+        interviewType: "case-interview" as const,
+        industry: "Consulting",
+        difficultyLevel: 6,
+        interviewerCount: 2,
+        tone: "balanced" as const,
+        timeLimitMinutes: 40,
+      };
+    }
+
+    if (pitch) {
+      return {
+        jobType: "Startup Pitch Presenter",
+        interviewType: "startup-pitch" as const,
+        industry: "Startups",
+        difficultyLevel: 6,
+        interviewerCount: 3,
+        tone: "balanced" as const,
+        timeLimitMinutes: 20,
+      };
+    }
+
+    if (panel) {
+      return {
+        jobType: "Panel Presentation Candidate",
+        interviewType: "panel-presentation" as const,
+        industry: "General",
+        difficultyLevel: 6,
+        interviewerCount: 3,
+        tone: "balanced" as const,
+        timeLimitMinutes: 30,
+      };
+    }
+
+    if (press) {
+      return {
+        jobType: "Press Interview Candidate",
+        interviewType: "press-interview" as const,
+        industry: "Media",
+        difficultyLevel: 6,
+        interviewerCount: 2,
+        tone: "balanced" as const,
+        timeLimitMinutes: 25,
+      };
+    }
+
+    if (highStakesQa) {
+      return {
+        jobType: "High-Stakes Q&A Candidate",
+        interviewType: "high-stakes-qa" as const,
+        industry: "General",
+        difficultyLevel: 8,
+        interviewerCount: 3,
+        tone: "aggressive" as const,
+        timeLimitMinutes: 25,
+      };
+    }
+
+    // Vague interview intent defaults to general interview at average difficulty.
+    return {
+      jobType: "General Interview Candidate",
+      interviewType: "job-interview" as const,
+      industry: "General",
+      difficultyLevel: 5,
+      interviewerCount: 2,
+      tone: "balanced" as const,
+      timeLimitMinutes: 30,
+    };
+  }
+
+  async function launchInterviewSimulation(params: {
+    worldTitle: string;
+    worldPrompt: string;
+  }) {
+    const profile = resolveInterviewMode(params.worldPrompt);
+
+    if (!profile) {
+      return false;
+    }
+
+    const response = await fetch("/api/communication/scenario", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ...profile,
+      }),
+    });
+
+    const payload = (await response.json()) as { sessionId?: string; error?: string };
+    if (!response.ok || !payload.sessionId) {
+      throw new Error(payload.error ?? "Failed to launch simulation session.");
+    }
+
+    router.push(`/simulation/${payload.sessionId}`);
+    return true;
+  }
+
+  async function launchWorldSimulation(params: { worldId: string; roleId: string }) {
+    const response = await fetch("/api/sessions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        worldId: params.worldId,
+        roleId: params.roleId,
+      }),
+    });
+
+    const payload = (await response.json()) as { session?: { id: string }; error?: string };
+    if (!response.ok || !payload.session?.id) {
+      throw new Error(payload.error ?? "Failed to launch world simulation session.");
+    }
+
+    router.push(`/simulation/world/${payload.session.id}`);
+  }
+
   async function loadWorldDetail(worldId: string) {
     const detailResponse = await fetch(`/api/worlds/${worldId}`, {
       cache: "no-store",
@@ -77,6 +238,19 @@ export function WorldBuilderConsole() {
         const detail = await loadWorldDetail(built.worldId);
         const nextRoleId = detail.world.roles[0]?.id ?? built.roleId;
         setBuildResult({ ...built, roleId: nextRoleId });
+        const launched = await launchInterviewSimulation({
+          worldTitle: built.world.title,
+          worldPrompt: prompt,
+        });
+        if (launched) {
+          setStatus(`World published: ${built.world.title}. Launching interview simulation...`);
+        } else {
+          setStatus(`World published: ${built.world.title}. Launching world simulation...`);
+          await launchWorldSimulation({
+            worldId: built.worldId,
+            roleId: nextRoleId,
+          });
+        }
       } catch (detailError) {
         setError(detailError instanceof Error ? detailError.message : "Failed to load editable world JSON.");
       }
@@ -139,11 +313,21 @@ export function WorldBuilderConsole() {
     <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-6 px-4 py-8 md:px-6 lg:px-8">
       <section className="panel rounded-[2rem] p-6 md:p-8">
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--muted)]">World Builder</p>
-        <h1 className="mt-4 text-3xl font-semibold text-stone-900 md:text-5xl">Generate a Dynamic Historical World</h1>
+        <h1 className="mt-4 text-3xl font-semibold text-stone-900 md:text-5xl">Generate Simulation World</h1>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-stone-700 md:text-base">
           Describe the world you want to inhabit. The builder compiles a full world definition, auto-publishes it,
           and lets you edit JSON before launching a session.
         </p>
+        <div className="mt-4 rounded-2xl border border-[var(--border)] bg-white/65 p-4 text-xs leading-6 text-stone-700">
+          <p className="font-mono uppercase tracking-[0.2em] text-[var(--muted)]">Audio Simulation MVP</p>
+          <p className="mt-2">
+            The new high-stakes communication simulator is currently exposed through web API routes.
+            You can test iterative progress using:
+          </p>
+          <p className="mt-2 font-mono text-[11px] text-stone-800">POST /api/communication/scenario</p>
+          <p className="font-mono text-[11px] text-stone-800">POST /api/communication/turn</p>
+          <p className="font-mono text-[11px] text-stone-800">POST /api/communication/feedback</p>
+        </div>
 
         <div className="mt-6 grid gap-4">
           <textarea

@@ -10,6 +10,14 @@ export { FallbackTextGenerator } from "./generator";
 export { StaticWorldLoader } from "./world-loader";
 export { buildWorldDefinitionFromPrompt } from "./world-builder";
 export { getOpenAIClient } from "./openai-client";
+export { AudioCommunicationSimulationEngine } from "./communication";
+export {
+  generateCommunicationScenario,
+  analyzeSpeechTurn,
+  scoreCommunicationTurn,
+  scaleDifficulty,
+  buildSimulationFeedbackReport,
+} from "./communication";
 export {
   OpenAITextGenerationProvider,
   FallbackTextGenerationProvider,
@@ -44,3 +52,15 @@ export type {
   MemorySummarizer,
   PolicyGuard,
 } from "./interfaces";
+export type {
+  CommunicationScenarioType,
+  CommunicationScenarioInput,
+  CommunicationSimulationSession,
+  ProcessCommunicationTurnInput,
+  ProcessCommunicationTurnResult,
+  ScenarioTone,
+  ScoreBreakdown,
+  SimulationFeedbackReport,
+  SimulationPersona,
+  SpeechTurnSignal,
+} from "./communication";
